@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV Adifa Ar-Rayan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="hero-left">
+      <h1>Adifa Ar-Rayan</h1>
+      <p class="tagline">Mahasiswa Informatika · Web & Mobile Enthusiast</p>
+      <div class="hero-buttons">
+        <a href="cv-adifa-ar-rayan.pdf" class="btn ghost" download>Download CV</a>
+        <a href="#contact" class="btn primary">Hubungi Saya</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="profile.jpg" alt="Foto Profil Adifa Ar-Rayan" class="profile-pic" />
+    </div>
+  </header>
+
+  <!-- ── NAVBAR ────────────────────────────────────────────── -->
+  <nav class="navbar">
+    <a href="#about">Tentang</a>
+    <a href="#education">Pendidikan</a>
+    <a href="#skills">Skill</a>
+    <a href="#projects">Projek</a>
+    <a href="#contact">Kontak</a>
+  </nav>
+
+  <main>
+
+    <!-- ── TENTANG ─────────────────────────────────────────── -->
+    <section id="about" class="card">
+      <h2>Tentang Saya</h2>
+      <p>
+        Saya adalah mahasiswa Informatika yang tertarik pada pengembangan
+        web, mobile, dan Internet of Things. Terbiasa bekerja dalam tim,
+        suka belajar hal baru, dan senang membangun project nyata agar
+        ilmu tidak sekadar teori.
+      </p>
+    </section>
+
+    <!-- ── PENDIDIKAN ──────────────────────────────────────── -->
+    <section id="education" class="card">
+      <h2>Pendidikan</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Universitas Muhammadiyah Malang</h3>
+            <p>Informatika · 2023 – Sekarang</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>MAN Madrasah Aliyah Negeri 1 Pagaralam</h3>
+            <p>2020 – 2023</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SKILL ───────────────────────────────────────────── -->
+    <section id="skills" class="card">
+      <h2>Skill</h2>
+      <div class="skill-grid">
+
+        <div class="skill-item">
+          <h3>Bahasa Pemrograman</h3>
+          <ul>
+            <li>Python dasar</li>
+            <li>Java dasar</li>
+            <li>C/C++ dasar</li>
+          </ul>
+        </div>
+
+        <div class="skill-item">
+          <h3>Web & Mobile</h3>
+          <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>PHP dasar</li>
+            <li>Dart (Flutter)</li>
+          </ul>
+        </div>
+
+        <div class="skill-item">
+          <h3>Framework & Tools</h3>
+          <ul>
+            <li>Flutter</li>
+            <li>Laravel dasar</li>
+            <li>Git & GitHub</li>
+          </ul>
+        </div>
+
+        <div class="skill-item">
+          <h3>Soft Skill</h3>
+          <ul>
+            <li>Kerja tim</li>
+            <li>Problem solving</li>
+            <li>Manajemen waktu</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── PROJEK ───────────────────────────────────────────── -->
+    <section id="projects" class="card">
+      <h2>Project Pilihan</h2>
+      <div class="project-grid">
+
+        <article class="project-card">
+          <h3>Website Wedding Organizer</h3>
+          <p>
+            Landing page modern untuk jasa wedding organizer dengan section
+            layanan, paket, dan form konsultasi.
+          </p>
+          <span class="badge">HTML</span>
+          <span class="badge">CSS</span>
+          <span class="badge">JavaScript</span>
+        </article>
+
+        <article class="project-card">
+          <h3>CV Online</h3>
+          <p>
+            Website CV online responsif sebagai portofolio diri untuk
+            melamar magang atau kerja.
+          </p>
+          <span class="badge">Frontend</span>
+          <span class="badge">UI/UX</span>
+        </article>
+
+        <article class="project-card">
+          <h3>Map Pendakian Roblox</h3>
+          <p>
+            Map pendakian dengan beberapa checkpoint, sistem leaderboard,
+            dan mekanik game custom.
+          </p>
+          <span class="badge">Roblox Studio</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── KONTAK ───────────────────────────────────────────── -->
+    <section id="contact" class="card">
+      <h2>Kontak</h2>
+      <div class="contact-grid">
+
+        <div>
+          <p><strong>Email:</strong> Adifaarrayan15@gmail.com</p>
+          <p><strong>WhatsApp:</strong> 082214145814</p>
+          <p class="muted" style="margin-top: 8px;">
+            Silakan hubungi saya untuk kerjasama project, magang,
+            atau diskusi seputar pengembangan aplikasi.
+          </p>
+        </div>
+
+        <!-- Form — dikendalikan sepenuhnya oleh script.js -->
+        <form id="contact-form" novalidate>
+          <div class="field">
+            <label for="nama">Nama</label>
+            <input
+              type="text"
+              id="nama"
+              placeholder="Masukkan nama lengkap"
+              autocomplete="name"
+            />
+          </div>
+          <div class="field">
+            <label for="pesan">Pesan</label>
+            <textarea
+              id="pesan"
+              rows="4"
+              placeholder="Tulis pesanmu di sini"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn primary">Kirim</button>
+          <!-- Status dikontrol warnanya lewat JS (error=merah / sukses=hijau) -->
+          <p id="form-status" class="status-text" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ───────────────────────────────────────────── -->
+  <footer class="footer">
+    <p>© 2025 · CV Online Adifa Ar-Rayan</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
