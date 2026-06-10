@@ -1,16 +1,28 @@
-// Smooth scroll untuk semua link yang menuju section (#...)
+// ===== DIP FIX =====
+function smoothScroll(target) {
+  target.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}
+
+// ===== SRP FIX =====
+function validateForm(nama, pesan) {
+  return nama && pesan;
+}
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (e) => {
     const href = link.getAttribute("href");
+
     if (!href || href === "#") return;
 
     const target = document.querySelector(href);
+
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+
+      smoothScroll(target);
     }
   });
 });
@@ -26,12 +38,14 @@ if (form && statusText) {
     const nama = document.getElementById("nama").value.trim();
     const pesan = document.getElementById("pesan").value.trim();
 
-    if (!nama || !pesan) {
+    if (!validateForm(nama, pesan)) {
       statusText.textContent = "Nama dan pesan wajib diisi.";
       return;
     }
 
-    statusText.textContent = `Terima kasih, ${nama}. Pesanmu sudah tercatat (simulasi).`;
+    statusText.textContent =
+      `Terima kasih, ${nama}. Pesanmu sudah tercatat (simulasi).`;
+
     form.reset();
   });
 }
