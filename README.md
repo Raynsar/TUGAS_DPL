@@ -115,6 +115,7 @@ Jika berhasil, maka akan muncul hasil seperti:
 ```txt
 PASS tests/script.test.js
 ```
+<img width="1600" height="805" alt="image" src="https://github.com/user-attachments/assets/122db316-d87a-4e32-9d7d-01727008efa3" />
 
 ---
 
