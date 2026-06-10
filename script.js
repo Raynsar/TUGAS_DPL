@@ -11,6 +11,11 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
+// ============================================================
+// CONTACT FORM — REFACTORED (SOLID)
+// ============================================================
+
+// ─── 1. DATA ACCESSOR ───────────────────────────────────────
 function getFormData() {
   return {
     nama:  document.getElementById("nama")?.value.trim()  ?? "",
@@ -18,28 +23,33 @@ function getFormData() {
   };
 }
 
+// ─── 2. VALIDATOR ───────────────────────────────────────────
 function validateFormData({ nama, pesan }) {
-  if (!nama)          return { valid: false, message: "Nama wajib diisi." };
-  if (nama.length < 2) return { valid: false, message: "Nama minimal 2 karakter." };
-  if (!pesan)         return { valid: false, message: "Pesan wajib diisi." };
-  if (pesan.length < 5) return { valid: false, message: "Pesan terlalu pendek." };
+  const n = (nama  ?? "").trim();
+  const p = (pesan ?? "").trim();
+  if (!n)           return { valid: false, message: "Nama wajib diisi." };
+  if (n.length < 2) return { valid: false, message: "Nama minimal 2 karakter." };
+  if (!p)           return { valid: false, message: "Pesan wajib diisi." };
+  if (p.length < 5) return { valid: false, message: "Pesan terlalu pendek." };
   return { valid: true, message: null };
 }
 
+// ─── 3. SUBMISSION HANDLER ──────────────────────────────────
 function submitFormData({ nama }) {
-  
   return {
     success: true,
     message: `Terima kasih, ${nama}. Pesanmu sudah tercatat!`,
   };
 }
 
+// ─── 4. UI RENDERER ─────────────────────────────────────────
 function renderStatus(statusEl, message, isError = false) {
   if (!statusEl) return;
-  statusEl.textContent  = message;
-  statusEl.style.color  = isError ? "#f87171" : "#34d399";
+  statusEl.textContent = message;
+  statusEl.style.color = isError ? "#f87171" : "#34d399";
 }
 
+// ─── 5. CONTROLLER / ORCHESTRATOR ───────────────────────────
 function initContactForm(formEl, statusEl) {
   if (!formEl || !statusEl) return;
 
@@ -64,3 +74,14 @@ function initContactForm(formEl, statusEl) {
 const form       = document.getElementById("contact-form");
 const statusText = document.getElementById("form-status");
 initContactForm(form, statusText);
+
+// ─── EXPORTS (untuk unit testing) ───────────────────────────
+if (typeof module !== "undefined") {
+  module.exports = {
+    getFormData,
+    validateFormData,
+    submitFormData,
+    renderStatus,
+    initContactForm,
+  };
+}
